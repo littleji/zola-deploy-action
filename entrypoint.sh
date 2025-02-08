@@ -103,8 +103,8 @@ main() {
         
         git init
         git remote add origin $remote_repo
-        git config user.name "GitHub Actions"
-        git config user.email "github-actions-bot@users.noreply.${GITHUB_HOSTNAME}"
+        git config --global user.name 'littlji'
+        git config --global user.email 'noreply@example.com'  
         git add .
 
         git commit -m "Deploy ${TARGET_REPOSITORY} to ${TARGET_REPOSITORY}:$remote_branch"
