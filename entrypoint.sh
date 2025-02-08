@@ -79,7 +79,7 @@ main() {
     remote_repo="git@github.com:${TARGET_REPOSITORY}.git"
     echo "$remote_repo"
     remote_branch=$PAGES_BRANCH
-    git remote add origin $remote_repo
+    git remote set-url origin $remote_repo
 
     echo "Using $version" 
 
