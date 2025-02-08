@@ -96,7 +96,6 @@ main() {
         mkdir -p ~/.ssh/ 
         echo "$DEPLOY_TOKEN"
         echo "$DEPLOY_TOKEN" > ~/.ssh/id_rsa      
-        chmod 600 ~/.ssh/id_rsa
         
         git init
         git config user.name "GitHub Actions"
