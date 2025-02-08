@@ -70,10 +70,11 @@ main() {
     fi
 
     version=$(zola --version)
-    remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"
+    #remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"
+    remote_repo="https://${GITHUB_ACTOR}:${DEPLOY_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"       
     remote_branch=$PAGES_BRANCH
 
-    echo "Using $version"
+    echo "Using $version" 
 
     echo Building with flags: ${BUILD_FLAGS:+"$BUILD_FLAGS"}
     zola build ${BUILD_FLAGS:+$BUILD_FLAGS}
