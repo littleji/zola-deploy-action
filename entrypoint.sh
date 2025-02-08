@@ -111,7 +111,7 @@ main() {
 
         git commit -m "Deploy ${TARGET_REPOSITORY} to ${TARGET_REPOSITORY}:$remote_branch"
         #git push --force "${remote_repo}" master:"${remote_branch}"
-        git push --force origin HEAD:master --force
+        git push --force origin master:"${remote_branch}"
 
         echo "Deploy complete"
     fi
