@@ -14,7 +14,7 @@ ENV LANGUAGE en_US.UTF-8
 RUN apt-get update && apt-get install -y wget git
 
 RUN wget -q -O - \
-"https://github.com/littleji/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu-chineses-support.tar.gz" \ 
+"https://github.com/littleji/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu-chineses-support.tar.gz" \
 | tar xzf - -C /usr/local/bin
 
 
