@@ -70,7 +70,13 @@ main() {
     fi
 
     version=$(zola --version)
-    remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"
+    #remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git"
+    ###### use deploy_token to deploy  
+    mkdir -p ~/.ssh/
+    echo "$DEPLOY_TOKEN" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
+    remote_repo=git@github.com:${GITHUB_HOSTNAME}/${TARGET_REPOSITORY}.git
     remote_branch=$PAGES_BRANCH
 
     echo "Using $version" 
@@ -92,10 +98,7 @@ main() {
         cd "${OUT_DIR}"
 
         touch .nojekyll
-        ###### use deploy_token to deploy  
-        #mkdir -p ~/.ssh/  
-        #echo "$DEPLOY_TOKEN"   
-        #echo "$DEPLOY_TOKEN" > ~/.ssh/id_rsa        
+
         
         git init
         git config user.name "GitHub Actions"
