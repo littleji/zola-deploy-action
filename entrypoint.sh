@@ -92,7 +92,11 @@ main() {
         cd "${OUT_DIR}"
 
         touch .nojekyll
-
+        ###### use deploy_token to deploy  
+        mkdir -p ~/.ssh/          
+        echo "$DEPLOY_TOKEN" > ~/.ssh/id_rsa      
+        chmod 600 ~/.ssh/id_rsa
+        
         git init
         git config user.name "GitHub Actions"
         git config user.email "github-actions-bot@users.noreply.${GITHUB_HOSTNAME}"
