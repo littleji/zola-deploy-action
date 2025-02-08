@@ -79,6 +79,7 @@ main() {
     remote_repo="git@github.com:${TARGET_REPOSITORY}.git"
     echo "$remote_repo"
     remote_branch=$PAGES_BRANCH
+    git remote add origin $remote_repo
 
     echo "Using $version" 
 
@@ -107,7 +108,8 @@ main() {
         git add .
 
         git commit -m "Deploy ${TARGET_REPOSITORY} to ${TARGET_REPOSITORY}:$remote_branch"
-        git push --force "${remote_repo}" master:"${remote_branch}"
+        #git push --force "${remote_repo}" master:"${remote_branch}"
+        git push --force origin HEAD:master --force
 
         echo "Deploy complete"
     fi
