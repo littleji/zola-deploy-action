@@ -17,6 +17,8 @@ RUN wget -q -O - \
 "https://github.com/getzola/zola/releases/download/v0.19.2/zola-v0.19.2-x86_64-unknown-linux-gnu.tar.gz" \
 | tar xzf - -C /usr/local/bin
 
+RUN chmod +x /usr/local/bin/zola
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
