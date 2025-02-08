@@ -34,7 +34,7 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v4
     - name: Build and deploy
-      uses: littleji/zola-deploy-action@v0.19.2
+      uses: littleji/zola-deploy-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -58,7 +58,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Build only
-        uses: littleji/zola-deploy-action@v0.19.2
+        uses: littleji/zola-deploy-action@master
         env:
           BUILD_DIR: docs
           BUILD_ONLY: true
@@ -73,12 +73,14 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Build and deploy
-        uses: littleji/zola-deploy-action@v0.19.2
+        uses: littleji/zola-deploy-action@master
         env:
           BUILD_DIR: docs
           PAGES_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
+          REPOSITORY: USERNAME/USERNAME.github.io     存储库：您/littleji.github.io
+
+``
 
 ## Environment Variables
 * `PAGES_BRANCH`: The git branch of your repo to which the built static files will be pushed. Default is `gh-pages` branch
