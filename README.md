@@ -78,8 +78,7 @@ jobs:
           BUILD_DIR: docs
           PAGES_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: USERNAME/USERNAME.github.io     存储库：您/littleji.github.io
-
+          REPOSITORY: USERNAME/USERNAME.github.io  
 ``
 
 ## Environment Variables
