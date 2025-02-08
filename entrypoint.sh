@@ -76,7 +76,8 @@ main() {
     echo "$DEPLOY_TOKEN" > ~/.ssh/id_rsa
     chmod 600 ~/.ssh/id_rsa
     ssh-keyscan github.com >> ~/.ssh/known_hosts
-    remote_repo="git@github.com:${TARGET_REPOSITORY}.git"
+    remote_repo="git@github.com:${TARGET_REPOSITORY}.git"                        
+    echo "$remote_repo"
     remote_branch=$PAGES_BRANCH
 
     echo "Using $version" 
