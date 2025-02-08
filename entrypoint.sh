@@ -56,9 +56,11 @@ main() {
     echo "Building in $BUILD_DIR directory"
     cd "$BUILD_DIR"
 
-    git config --global url."https://".insteadOf git://
+    #git config --global url."https://".insteadOf git:// 
     ## $GITHUB_SERVER_URL is set as a default environment variable in all workflows, default is https://github.com
-    git config --global url."$GITHUB_SERVER_URL/".insteadOf "git@${GITHUB_HOSTNAME}":
+
+
+    #git config --global url."$GITHUB_SERVER_URL/".insteadOf "git@${GITHUB_HOSTNAME}":  
 
     # needed or else we get 'doubious ...' error
     echo "Disable safe directory check"
